@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | Clínica Codo a Codo</title>
+    <link rel="icon" type="image/x-icon" href="img/logo.ico">
+    <!-- JavaScript -->
+    <script src="https://kit.fontawesome.com/a6123d0355.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/modales.js" defer></script>
+    <script src="js/navbar.js" defer></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/header-footer.css">
+    <link rel="stylesheet" href="css/modales.css">
+</head>
+
+<body>
+    <header>
+        <address>
+            <ul>
+                <li><a href="http://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="http://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="http://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="mailto:ejemplo@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a></li>
+            </ul>
+            <ul id="informacion">
+                <li><i class="fa-solid fa-location-dot"></i> Florida 325</li>
+                <li><i class="fa-solid fa-phone-flip"></i> 4581-8538</li>
+                <li><i class="fa-brands fa-whatsapp"></i> 11 4805-7548</li>
+                <li><i class="fa-solid fa-clock"></i> 11 4805-7548</li>
+            </ul>
+        </address>
+        <nav>
+            <a href="#"><img id="img-logo" src="img/logo.png" alt="Logo de la empresa"></a>
+            <div id="nav-body">
+                <div id="nav-body-header">
+                    <h1>Clínica "Codo a Codo"</h1>
+                    <button id="btn-iniciar-sesion" data-modal-objetivo="#modal-iniciar-sesion"
+                        class="btn-modal-abrir boton-menu">Iniciar sesión</button>
+                    <div class="contenedor-modal">
+                        <div class="modal modal-generico" id="modal-iniciar-sesion">
+                            <div class="modal-header">
+                                <h5 class="modal-titulo">Iniciar sesión</h5>
+                                <button class="btn-modal-cerrar">X</button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="#" method="post">
+                                    <fieldset class="label-textbox">
+                                        <label for="cuit_iniciar_sesion">CUIT/CUIL (sin guiones)</label>
+                                        <input id="cuit_iniciar_sesion" name="cuit" type="number"
+                                            min="1" placeholder="Introduzca su CUIT/CUIL..." required>
+                                    </fieldset>
+                                    <fieldset class="label-textbox">
+                                        <label for="contraseña_iniciar_sesion">Contraseña</label>
+                                        <input id="contraseña_iniciar_sesion" name="contraseña" type="password"
+                                            placeholder="Introduzca su contraseña..." required>
+                                    </fieldset>
+                                    <button type="submit">Iniciar sesión</button>
+                                    <fieldset class="label-checkbox">
+                                        <label for="recordar">Recordarme</label>
+                                        <input id="recordar" type="checkbox" checked="checked">
+                                    </fieldset>
+                                    <a role="button" href="#" data-modal-objetivo="#modal-registrarse" class="btn-modal-abrir">¿Todavía no
+                                        tienes una cuenta?</a>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="modal modal-generico" id="modal-registrarse">
+                            <div class="modal-header">
+                                <h5 class="modal-titulo">Registrarse</h5>
+                                <button class="btn-modal-cerrar">X</button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="#" method="post">
+                                    <fieldset class="label-textbox">
+                                        <label for="nombre_registrarse">Nombre</label>
+                                        <input id="nombre_registrarse" name="nombre" type="text"
+                                            placeholder="Introduzca su nombre..." required>
+                                    </fieldset>
+                                    <fieldset class="label-textbox">
+                                        <label for="apellido_registrarse">Apellido</label>
+                                        <input id="apellido_registrarse" name="apellido" type="text"
+                                            placeholder="Introduzca su apellido..." required>
+                                    </fieldset>
+                                    <fieldset class="label-textbox">
+                                        <label for="dni_registrarse_registrarse">DNI</label>
+                                        <input id="dni_registrarse" name="dni" type="number"
+                                        min="1" placeholder="Introduzca su DNI..." required>
+                                    </fieldset>
+                                    <fieldset class="label-textbox">
+                                        <label for="cuit_registrarse">CUIT/CUIL (sin guiones)</label>
+                                        <input id="cuit_registrarse" name="cuit" type="number"
+                                        min="1" placeholder="Introduzca su CUIT/CUIL..." required>
+                                    </fieldset>
+                                    <fieldset class="label-textbox">
+                                        <label for="contraseña_registrarse">Contraseña</label>
+                                        <input id="contraseña_registrarse" name="contraseña" type="password"
+                                            placeholder="Introduzca su contraseña..." required>
+                                    </fieldset>
+                                    <button type="submit">Registrarse</button>
+                                    <a role="button" href="#" data-modal-objetivo="#modal-iniciar-sesion" class="btn-modal-abrir">¿Ya
+                                        tienes una cuenta?</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="btn-hamburguesa">
+                    <div id="lineas-hamburguesa"><hr><hr><hr></div>
+                </button>
+                <ul id="botonera">
+                    <li><a href="index.html" class="boton-menu">INICIO</a></li>
+                    <li><a href="html/institucional.html" class="boton-menu">INSTITUCIONAL</a></li>
+                    <li><a href="html/asistencia.html" class="boton-menu">ASISTENCIA</a></li>
+                    <li><a href="html/novedades.html" class="boton-menu">NOVEDADES</a></li>
+                    <li><a href="html/contacto.html" class="boton-menu">CONTACTO</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+    </main>
+    <aside>
+    </aside>
+    <footer>
+    </footer>
+</body>
