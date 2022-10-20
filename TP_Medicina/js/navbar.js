@@ -1,3 +1,9 @@
+const botonHamburguesa = document.getElementById("btn-hamburguesa");
+
+botonHamburguesa.addEventListener("click", () => {
+    botonHamburguesa.classList.toggle("abierto");
+});
+
 // const moverInfo = (mediaQueryList) => {
 //     let listaInfo = document.querySelector("#informacion");
 //     let navbarAddress = document.querySelector("header address");
@@ -9,7 +15,7 @@
 //     }
 // }
 
-const mobileBreakpoint = matchMedia("screen and (max-width: 570px)");
-mobileBreakpoint.addEventListener("change", moverInfo);
+// const mobileBreakpoint = matchMedia("screen and (max-width: 570px)");
+// mobileBreakpoint.addEventListener("change", moverInfo);
 
-moverInfo(mobileBreakpoint);
+// moverInfo(mobileBreakpoint);

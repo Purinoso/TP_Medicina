@@ -11,7 +11,9 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: "Lato", sans-serif;    
+    font-family: "Lato", sans-serif;
+    border: none;
+    box-sizing: border-box;
 }
 
 button:hover, a:hover {
@@ -65,9 +67,7 @@ ul {
 /* ESTILO DEL HEADER */
 
 header > * {
-    display: flex;
     font-weight: bold;
-    padding: 10px;
 }
 
 header a {
@@ -75,6 +75,8 @@ header a {
 }
 
 address {
+    padding: 10px;
+    display: flex;
     justify-content: space-between;
     background-color: var(--verde-marino);
     color: white;
@@ -95,31 +97,36 @@ address a {
 }
 
 nav {
+    padding: 5px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: 50px 1fr;
+    grid-template-areas:
+    "logo titulo   btn-iniciar-sesion"
+    "logo botonera botonera";
     background-color: var(--palido);
+}
+
+nav > * {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+nav a {
+    grid-area: logo;
 }
 
 #img-logo {
     max-height: 100px;
 }
 
-#nav-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
-    flex-grow: 1;
-    margin-left: 1em;
-    padding: 0.5em;
-}
-
-#nav-body-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    width: 100%;
+h1 {
+    grid-area: titulo;
 }
 
 #botonera {
+    grid-area: botonera;
     display: flex;
     width: 100%;
     flex-wrap: wrap;
@@ -130,7 +137,7 @@ nav {
     flex-grow: 1;
 }
 
-.boton-menu {
+.btn-menu {
     display: block;
     text-align: center;
     box-shadow: 0 0 3px black;
@@ -138,64 +145,146 @@ nav {
     padding: 0.5em 0.5em;
     background: linear-gradient(180deg, #00A9B0 0%, rgb(135, 232, 252) 100%);
     transition: color 0.25s ease-in-out, background 0.50s ease-in-out;
-    border: none;
 }
 
-.boton-menu:hover {
+.btn-menu:hover {
     color: white;
     background: linear-gradient(96deg, rgb(61, 204, 233) 0%, #00FFC6 100%);
 }
 
 #btn-iniciar-sesion {
+    margin: 5px;
+    grid-area: btn-iniciar-sesion;
     font-weight: bold;
+    margin-left: auto;
 }
 
-@media screen and (max-width: 790px) {
+@media screen and (max-width: 767px) {
     address {
         font-size: 0.8em;
-        justify-content: center;
-    }
-
-    #botonera {
-        font-size: 1em;
     }
 }
 
 /* CONFIGURACIÓN MOBILE */
 
 #btn-hamburguesa {
+    grid-area: btn-hamburguesa;
+    margin-right: auto;
     display: none;
-    border: none;
-    width: 50px;
-    height: 50px;
-    background-color: var(--verde-marino);
-    border-radius: 5px;
-}
-
-#lineas-hamburguesa {
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-    display: flex;
     flex-direction: column;
     justify-content: space-around;
+    width: 45px;
+    height: 45px;
+    background-color: var(--verde-marino);
+    border-radius: 5px;
+    padding: 10px;
 }
 
-#lineas-hamburguesa hr {
+#btn-hamburguesa hr {
+    width: 25px;
     height: 3px;
     border-radius: 2px;
     background-color: white;
-    border: none;
-    position: relative;
+    transition: transform 0.5s;
 }
 
-@media screen and (max-width: 570px) {
-    #btn-hamburguesa {
-        display: block;
+#btn-hamburguesa.abierto {
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+}
+
+#btn-hamburguesa.abierto hr {
+    position: absolute;
+}
+
+#btn-hamburguesa.abierto ~ #botonera {
+    display: flex;
+    transform-origin: top;
+    animation-direction: alternate;
+    animation-name: abrir-botonera;
+    animation-duration: 0.5s;
+}
+
+@keyframes abrir-botonera {
+    from {transform: scale(1, 0);}
+    to {tranform: scale(1, 1);}
+}
+
+#btn-hamburguesa.abierto hr:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+#btn-hamburguesa.abierto hr:nth-child(2) {
+    display: none;
+}
+
+#btn-hamburguesa.abierto hr:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+
+
+@media screen and (max-width: 590px) {
+    address, #img-logo {
+        justify-content: center;
+    }
+
+    #img-logo {
+        max-height: 50px;
+    }
+
+    nav {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: 1fr repeat(2, auto);
+        grid-template-areas:
+        "logo               titulo"
+        "btn-hamburguesa btn-iniciar-sesion"
+        "botonera        botonera";
     }
     
-    #btn-iniciar-sesion, #botonera, #informacion {
+    #btn-hamburguesa {
+        display: flex;
+    }
+
+    #botonera {
+        display: none;
+        position: relative;
+        padding: 0;
+        margin-top: 5px;
+        width: 100%;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        background: linear-gradient(180deg, rgba(117,230,218,1) 0%, rgba(5,68,94,1) 100%);;
+    }
+
+    #botonera > * {
+        width: 100%;
+        font-size: 0.8em;
+        background: none;
+    }
+
+    #botonera .btn-menu {
+        background: transparent;
+        color: white;
+        background-color: transparent;
+    }
+
+    #botonera .btn-menu:hover {
+        color: black;
+    }
+
+    #btn-iniciar-sesion {
+        width: 100%;
+        margin: 2px 0;
+    }
+
+    h1 {
+        justify-content: center;
+        font-size: 1.25em;
+    }
+
+    #informacion {
         display: none;
     }
 }
