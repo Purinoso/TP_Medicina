@@ -1,19 +1,23 @@
 /* IMPORTACIÓN DE FUENTES */
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Quicksand:wght@500&display=swap');
 
 :root {
-    --palido: #F2F2F2;
-    --verde-marino: #43919B;
-    --amarillo-fluor: #d6d41b;
+    --blanco-mate: #F5EFE6;
+    --rosa-tostado: #E8DFCA;
+    --verde-marino: #7895B2;
+    --gris-marino: #AEBDCA;
+    --esmeralda-oscuro: #1E3D58;
+    --celeste: #B8E8FC;
+    --azul-francia: #2146C7;
 }
 
 * {
     padding: 0;
     margin: 0;
-    font-family: "Lato", sans-serif;
-    border: none;
     box-sizing: border-box;
+    border: none;
 }
 
 button:hover, a:hover {
@@ -24,12 +28,12 @@ button:hover, a:hover {
 
 body {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     grid-template-rows: repeat(3, auto);
     grid-template-areas:
-    "header header"
-    "main   aside"
-    "footer footer";
+    "header"
+    "main"
+    "footer";
 }
 
 header {
@@ -40,10 +44,6 @@ main {
     grid-area: main;
 }
 
-aside {
-    grid-area: aside;
-}
-
 footer {
     grid-area: footer;
 }
@@ -52,22 +52,12 @@ ul {
     list-style: none;
 }
 
-@media screen and (max-width: 790px) {
-    body {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(4, auto);
-        grid-template-areas: 
-        "header"
-        "main"
-        "aside"
-        "footer";
-    }
-}
-
 /* ESTILO DEL HEADER */
 
-header > * {
+header {
     font-weight: bold;
+    font-family: "Lato", sans-serif;
+    border-bottom: solid var(--gris-marino) 1px;
 }
 
 header a {
@@ -83,9 +73,8 @@ address {
     font-style: normal;
 }
 
-address > * {
+address ul {
     display: flex;
-    justify-content: center;
 }
 
 address li {
@@ -96,6 +85,10 @@ address a {
     color: white;
 }
 
+address a:hover {
+    color: var(--esmeralda-oscuro)
+}
+
 nav {
     padding: 5px;
     display: grid;
@@ -104,7 +97,7 @@ nav {
     grid-template-areas:
     "logo titulo   btn-iniciar-sesion"
     "logo botonera botonera";
-    background-color: var(--palido);
+    background-color: var(--blanco-mate);
 }
 
 nav > * {
@@ -113,7 +106,7 @@ nav > * {
     padding: 5px;
 }
 
-nav a {
+nav > a {
     grid-area: logo;
 }
 
@@ -127,32 +120,34 @@ h1 {
 
 #botonera {
     grid-area: botonera;
-    display: flex;
     width: 100%;
     flex-wrap: wrap;
     font-size: 1.2em;
 }
 
-#botonera > * {
+#botonera > li {
     flex-grow: 1;
 }
 
 .btn-menu {
-    display: block;
     text-align: center;
     box-shadow: 0 0 3px black;
-    color: black;
     padding: 0.5em 0.5em;
-    background: linear-gradient(180deg, #00A9B0 0%, rgb(135, 232, 252) 100%);
+    background: linear-gradient(180deg, var(--gris-marino) 0%, var(--celeste) 100%);
     transition: color 0.25s ease-in-out, background 0.50s ease-in-out;
+} 
+
+.btn-menu a {
+    color: inherit;
 }
 
 .btn-menu:hover {
     color: white;
-    background: linear-gradient(96deg, rgb(61, 204, 233) 0%, #00FFC6 100%);
+    background: linear-gradient(180deg, var(--verde-marino) 0%, var(--rosa-tostado) 100%);
 }
 
 #btn-iniciar-sesion {
+    display: block;
     margin: 5px;
     grid-area: btn-iniciar-sesion;
     font-weight: bold;
@@ -168,9 +163,9 @@ h1 {
 /* CONFIGURACIÓN MOBILE */
 
 #btn-hamburguesa {
+    display: none;
     grid-area: btn-hamburguesa;
     margin-right: auto;
-    display: none;
     flex-direction: column;
     justify-content: space-around;
     width: 45px;
@@ -223,15 +218,9 @@ h1 {
     transform: rotate(-45deg);
 }
 
-
-
 @media screen and (max-width: 590px) {
-    address, #img-logo {
+    address, h1 {
         justify-content: center;
-    }
-
-    #img-logo {
-        max-height: 50px;
     }
 
     nav {
@@ -242,36 +231,13 @@ h1 {
         "btn-hamburguesa btn-iniciar-sesion"
         "botonera        botonera";
     }
-    
+
+    #img-logo {
+        max-height: 50px;
+    }
+      
     #btn-hamburguesa {
         display: flex;
-    }
-
-    #botonera {
-        display: none;
-        position: relative;
-        padding: 0;
-        margin-top: 5px;
-        width: 100%;
-        flex-wrap: nowrap;
-        flex-direction: column;
-        background: linear-gradient(180deg, rgba(117,230,218,1) 0%, rgba(5,68,94,1) 100%);;
-    }
-
-    #botonera > * {
-        width: 100%;
-        font-size: 0.8em;
-        background: none;
-    }
-
-    #botonera .btn-menu {
-        background: transparent;
-        color: white;
-        background-color: transparent;
-    }
-
-    #botonera .btn-menu:hover {
-        color: black;
     }
 
     #btn-iniciar-sesion {
@@ -280,11 +246,67 @@ h1 {
     }
 
     h1 {
-        justify-content: center;
-        font-size: 1.25em;
+        font-size: max(0.918em, 4vw);
+    }
+    
+    #botonera {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        position: relative;
+        padding: 0;
+        margin-top: 5px;
+        background: linear-gradient(180deg, rgba(117,230,218,1) 0%, rgba(5,68,94,1) 100%);;
+    }
+    
+    #botonera .btn-menu {
+        font-size: 0.8em;
+        background: transparent;
+        box-shadow: none;
     }
 
     #informacion {
-        display: none;
+        background-color: var(--esmeralda-oscuro);
+        text-align: center;
+        color: white;
+        font-size: 0.65em;
+        padding: 10px;
     }
+
+    #informacion > * {
+        padding: 5px;
+    }
+}
+
+/* ESTILO DEL MAIN */
+
+main {
+    background-color: var(--blanco-mate);
+    padding: 3vw;
+    font-size: min(1.2em, 2.5vw);
+    font-family: 'Quicksand', sans-serif;
+}
+
+.articulo-generico {
+    margin-top: 20px;
+    padding: min(5vw, 20px) 10px;
+    border-top: solid var(--gris-marino) 1px;
+}
+
+.articulo-generico h2 {
+    display: inline-block;
+    padding: 5px 0;
+    margin-bottom: 10px;
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+    border-image: linear-gradient(to right, var(--gris-marino), var(--azul-francia)) 1;
+}
+
+.articulo-generico p {
+    font-size: 0.8em;
+}
+
+.contenedor-tarjetas {
+    display: flex;
+    flex-wrap: wrap;
 }

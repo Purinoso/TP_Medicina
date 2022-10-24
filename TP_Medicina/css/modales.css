@@ -1,4 +1,4 @@
-@import url("header-footer.css");
+@import url("header-main-footer.css");
 
 /* CONFIGURACIÓN BÁSICA DE LOS MODALES */
 
@@ -102,7 +102,7 @@
 /* DISEÑO DE MODALES */
 
 .modal-generico {
-    background-color: var(--palido);
+    background-color: var(--blanco-mate);
 }
 
 .modal-generico .modal-header {

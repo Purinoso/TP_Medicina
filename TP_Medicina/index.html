@@ -9,22 +9,22 @@
     <link rel="icon" type="image/x-icon" href="img/logo.ico">
     <!-- JavaScript -->
     <script src="https://kit.fontawesome.com/a6123d0355.js" crossorigin="anonymous"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
     <script src="js/modales.js" defer></script>
     <script src="js/navbar.js" defer></script>
     <!-- CSS -->
-    <link rel="stylesheet" href="css/header-footer.css">
+    <link rel="stylesheet" href="css/header-main-footer.css">
     <link rel="stylesheet" href="css/modales.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
     <header>
         <address>
             <ul>
-                <li><a href="http://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
-                <li><a href="http://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
-                <li><a href="http://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-                <li><a href="mailto:ejemplo@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a></li>
+                <li><a href="http://www.facebook.com" title="Ir a la cuenta de Facebook de la clínica." target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="http://www.twitter.com" title="Ir a la cuenta de Twitter de la clínica." target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="http://www.instagram.com" title="Ir a la cuenta de Instagram de la clínica." target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="mailto:ejemplo@gmail.com" title="Enviar un correo al mail de la clínica." target="_blank"><i class="fa-solid fa-envelope"></i></a></li>
             </ul>
             <ul id="informacion">
                 <li><i class="fa-solid fa-location-dot"></i> Florida 325</li>
@@ -34,8 +34,8 @@
             </ul>
         </address>
         <nav>
-            <a href="#"><img id="img-logo" src="img/logo.png" alt="Logo de la empresa"></a>
-            <h1>Clínica "Codo a Codo"</h1>
+            <a href="#"><img id="img-logo" src="img/logo.webp" alt="Logo de la empresa"></a>
+            <h1>Centro médico "Codo a Codo"</h1>
             <button id="btn-iniciar-sesion" data-modal-objetivo="#modal-iniciar-sesion"
                 class="btn-modal-abrir btn-menu">Iniciar sesión</button>
             <div class="contenedor-modal">
@@ -106,22 +106,53 @@
                     </div>
                 </div>
             </div>
-            <button id="btn-hamburguesa">
+            <button id="btn-hamburguesa" title="boton hamburguesa">
                 <hr><hr><hr>
             </button>
             <ul id="botonera">
-                <li><a href="index.html" class="btn-menu">INICIO</a></li>
-                <li><a href="html/institucional.html" class="btn-menu">INSTITUCIONAL</a></li>
-                <li><a href="html/asistencia.html" class="btn-menu">ASISTENCIA</a></li>
-                <li><a href="html/novedades.html" class="btn-menu">NOVEDADES</a></li>
-                <li><a href="html/contacto.html" class="btn-menu">CONTACTO</a></li>
+                <li class="btn-menu"><a href="index.html">INICIO</a></li>
+                <li class="btn-menu"><a href="html/institucional.html">INSTITUCIONAL</a></li>
+                <li class="btn-menu"><a href="html/asistencia.html">ASISTENCIA</a></li>
+                <li class="btn-menu"><a href="html/novedades.html">NOVEDADES</a></li>
+                <li class="btn-menu"><a href="html/contacto.html">CONTACTO</a></li>
             </ul>
         </nav>
     </header>
     <main>
+        <article class="turnos-medicos">
+            <h2>Centro Médico "Codo a Codo"</h3>
+            <p>Atención personalizada<br>Asegurada la excelencia</p>
+            <a role="button" class="btn-modal-abrir" data-modal-objetivo="#modal-iniciar-sesion">TURNOS ONLINE</a>
+        </article>
+        <article class="articulo-generico">
+            <h2>Nuevo centro médico "Codo a Codo"</h2>
+            <p>En Febrero de 1997 la Sociedad Argentina de Socorros "Codo a Codo", comienza a prestar su inicial y primordial servicio de atención médico hospitalario a través del Nuevo Centro Médico "Codo a Codo", integrando uno de los más prestigiosos establecimientos asistenciales con estudios e internación existentes en el país.<br>Velamos por brindar una excelente atención.</p>
+        </article>
+        <article class="articulo-generico">
+            <h2>Planes de salud</h2>
+            <p>Planes de salud del Centro Médico "Codo a Codo".<br>Ofrecemos opciones que se adaptan a cada etapa de la vida.</p>
+            <div class="contenedor-tarjetas">
+                <section class="tarjeta-plan">
+                    <p>PLAN DIRIGIDO A NIÑOS</p>
+                    <h3>BAMBINO</h3>
+                    <a href="#">MÁS INFORMACIÓN</a>
+                </section>
+                <section class="tarjeta-plan">
+                    <p>PLAN JOVENES DE 16 A 30 AÑOS</p>
+                    <h3>JOVEN</h3>
+                    <a href="#">MÁS INFORMACIÓN</a>
+                </section>
+                <section class="tarjeta-plan">
+                    <p>PLAN PARA EL GRUPO FAMILIAR</p>
+                    <h3>FAMILIA</h3>
+                    <a href="#">MÁS INFORMACIÓN</a>
+                </section>
+            </div>
+        </article>
+        <article class="articulo-generico">
+            <h2>Listado de estudios</h2>
+        </article>
     </main>
-    <aside>
-    </aside>
     <footer>
     </footer>
 </body>

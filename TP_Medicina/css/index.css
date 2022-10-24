@@ -1,0 +1,66 @@
+@import url("header-main-footer.css");
+
+.turnos-medicos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 55vh;
+    max-height: 300px;
+    color: white;
+    background-image: url("../img/fondo-doctora.webp");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: cover;
+    border-radius: 15px;
+}
+
+.turnos-medicos > * {
+    margin: 5px 0;
+}
+
+.turnos-medicos a {
+    padding: 5px;
+    border: solid white 2px;
+    border-radius: 5px;
+    transition: all 0.25s ease-in-out;
+}
+
+.turnos-medicos a:hover {
+    background-color: var(--verde-marino);
+    border: 2px solid var(--verde-marino);
+    font-weight: bold;
+    transform: scale(1.1);
+}
+
+.tarjeta-plan {
+    flex-grow: 1;
+    box-sizing: border-box;
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 10px;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.tarjeta-plan:nth-child(1) {
+    background-color: var(--esmeralda-oscuro);
+}
+
+.tarjeta-plan:nth-child(2) {
+    background-color: var(--verde-marino);
+}
+
+.tarjeta-plan:nth-child(3) {
+    background-color: var(--celeste);
+}
+
+@media screen and (max-width: 590px) {
+    .turnos-medicos {
+        height: 25vh;
+    }
+}

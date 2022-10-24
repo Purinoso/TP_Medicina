@@ -9,10 +9,10 @@ for (const boton of botonesAbrirModal){
         let modalObjetivo = document.querySelector(boton.getAttribute("data-modal-objetivo"));
         if (modalActual) {
             cerrarModal(modalActual);
-        }
+        };
         modalObjetivo.style.display = "flex";
         modalActual = modalObjetivo;
-    })
+    });
 };
 
 const cerrarModal = modal => {
@@ -30,12 +30,12 @@ const cerrarModal = modal => {
 const cerrarContenedorModal = () => {
     cerrarModal(modalActual);
     contenedorModal.style.visibility = "hidden";
-}
+};
 
 contenedorModal.addEventListener("click", (evento) => {
     if (evento.target === contenedorModal) {
         cerrarContenedorModal();
-    }
+    };
 });
 
 for (const boton of botonesCerrarModal){
