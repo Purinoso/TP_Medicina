@@ -54,6 +54,10 @@ ul {
     list-style: none;
 }
 
+address {
+    font-style: normal;
+}
+
 /* ESTILO DEL HEADER */
 
 header {
@@ -66,28 +70,27 @@ header a {
     text-decoration: none;
 }
 
-address {
+header address {
     padding: 10px;
     display: flex;
     justify-content: space-between;
     background-color: var(--verde-marino);
     color: white;
-    font-style: normal;
 }
 
-address ul {
+header address ul {
     display: flex;
 }
 
-address li {
+header address li {
     margin: 0 10px;
 }
 
-address a {
+header address a {
     color: white;
 }
 
-address a:hover {
+header address a:hover {
     color: var(--esmeralda-oscuro)
 }
 
@@ -99,7 +102,7 @@ nav {
     grid-template-areas:
     "logo titulo   btn-iniciar-sesion"
     "logo botonera botonera";
-    background-color: var(--blanco-mate);
+    background-color: var(--rosa-tostado);
 }
 
 nav > * {
@@ -298,7 +301,7 @@ main {
 .articulo-generico h2 {
     display: inline-block;
     padding: 5px 0;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     border-bottom-width: 5px;
     border-bottom-style: solid;
     border-image: linear-gradient(to right, var(--gris-marino), var(--azul-francia)) 1;
@@ -317,4 +320,10 @@ main {
 
 .contenedor-tarjetas > * {
     flex-grow: 1;
+}
+
+/* ESTILO DEL FOOTER */
+
+footer {
+    /* display:  */
 }
