@@ -115,7 +115,7 @@ nav > a {
     grid-area: logo;
 }
 
-#img-logo {
+.img-logo {
     max-height: 100px;
 }
 
@@ -237,7 +237,7 @@ h1 {
         "botonera        botonera";
     }
 
-    #img-logo {
+    .img-logo {
         max-height: 50px;
     }
       
@@ -325,5 +325,5 @@ main {
 /* ESTILO DEL FOOTER */
 
 footer {
-    /* display:  */
+    display: flex;
 }
