@@ -314,3 +314,7 @@ main {
     justify-content: center;
     padding: 10px 0;
 }
+
+.contenedor-tarjetas > * {
+    flex-grow: 1;
+}
