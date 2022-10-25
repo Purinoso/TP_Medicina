@@ -35,28 +35,80 @@
 
 .tarjeta-plan {
     flex-grow: 1;
-    box-sizing: border-box;
-    flex-basis: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 30px 10px;
-    margin: 10px;
-    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 1em;
+    margin: 0.5em;
+    border-radius: 10px;
+}
+
+.tarjeta-plan > * {
+    margin: 5px 0;
+}
+
+.tarjeta-plan h3 {
+    font-size: 1.4em;
+}
+
+.tarjeta-plan p {
+    font-size: 0.85em;
+}
+
+.tarjeta-plan a {
+    color: black;
+    text-decoration: none;
+    font-size: 0.8em;
+    padding: 0.5em;
+    border: 1px solid black;
+    border-radius: 15px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.tarjeta-plan a:hover {
+    background-color: var(--blanco-mate);
 }
 
 .tarjeta-plan:nth-child(1) {
-    background-color: var(--esmeralda-oscuro);
+    background: linear-gradient(to bottom, #36d8d0 0%, #5eccff 100%);
 }
 
 .tarjeta-plan:nth-child(2) {
-    background-color: var(--verde-marino);
+    background: linear-gradient(to bottom, #0fe4c0 0%, #36d8d0 100%);
 }
 
 .tarjeta-plan:nth-child(3) {
-    background-color: var(--celeste);
+    background: linear-gradient(to bottom, #5eccff 0%, #45b4e7 100%);
+}
+
+#listado-estudios {
+    padding: 1em;
+    border-radius: 20px;
+    background-color: var(--rosa-tostado);
+    font-family: "Bitter", serif;
+}
+
+#listado-estudios > li {
+    padding: 1em 0;
+}
+
+#listado-estudios > *:not(:first-child) {
+    border-top: solid white 3px;
+}
+
+#listado-estudios h3 {
+    display: inline-block;
+    margin: 0 0 0 1em;
+    color: var(--verde-marino-oscuro);
+}
+
+#listado-estudios ul {
+    padding: 0 0 0 3em;
+}
+
+#listado-estudios ul li {
+    margin: 1em 0;
 }
 
 @media screen and (max-width: 590px) {

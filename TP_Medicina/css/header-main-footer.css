@@ -2,11 +2,13 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Quicksand:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@500&display=swap');
 
 :root {
     --blanco-mate: #F5EFE6;
     --rosa-tostado: #E8DFCA;
     --verde-marino: #7895B2;
+    --verde-marino-oscuro: #00A9B0;
     --gris-marino: #AEBDCA;
     --esmeralda-oscuro: #1E3D58;
     --celeste: #B8E8FC;
@@ -303,10 +305,12 @@ main {
 }
 
 .articulo-generico p {
-    font-size: 0.8em;
+    font-size: 1.1em;
 }
 
 .contenedor-tarjetas {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 0;
 }
