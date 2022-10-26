@@ -58,6 +58,10 @@ address {
     font-style: normal;
 }
 
+a {
+    color: inherit;
+}
+
 /* ESTILO DEL HEADER */
 
 header {
@@ -84,10 +88,6 @@ header address ul {
 
 header address li {
     margin: 0 10px;
-}
-
-header address a {
-    color: white;
 }
 
 header address a:hover {
@@ -141,10 +141,6 @@ h1 {
     background: linear-gradient(180deg, var(--gris-marino) 0%, var(--celeste) 100%);
     transition: color 0.25s ease-in-out, background 0.50s ease-in-out;
 } 
-
-.btn-menu a {
-    color: inherit;
-}
 
 .btn-menu:hover {
     color: white;
@@ -326,4 +322,40 @@ main {
 
 footer {
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: white;
+    font-size: min(1.3em, 2.5vw);
+    font-family: "Lato", sans-serif;
+    padding: 1em;
+    background-color: var(--verde-marino-oscuro);
+}
+
+footer > * {
+    flex-grow: 1;
+    padding: 1em;
+}
+
+footer > ul:nth-child(3) li:not(:last-child) {
+    color: var(--gris-marino);
+    margin: 0 0 0.5em 0;
+}
+
+footer ul:last-child {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+
+footer ul:last-child li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5em;
+    height: 2.5em;
+    background-color: var(--esmeralda-oscuro);
+}
+
+footer ul:last-child li:hover {
+    background-color: var(--azul-francia);
 }
